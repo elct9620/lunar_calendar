@@ -2,6 +2,32 @@
 
 Convert Solar Date to Lunar Date
 
+## Reference
+
+* Table data from [isee15/Lunar-Solar-Calendar-Converter](https://github.com/isee15/Lunar-Solar-Calendar-Converter)
+* Calculate discussion from [https://destiny.to/](https://destiny.to/ubbthreads/ubbthreads.php/ubb/showflat/Number/92769/site_id/1#import)
+
+## Data Structure
+
+### LunarCalendar::Data::NEW_YEARS
+
+Each value stores the Chinese New Year date in solar calendar
+
+| Name | Length
+|------|--------
+| Year | 12 bit
+| Month | 4 bit
+| Day  | 5 bit
+
+### LunarCalendar::Data::LEAP_MONTHS
+
+Each value stores the month days and leap month
+
+| Name | Length | Description
+|------|--------|--------------
+| Leap Month | 4 bit | `0` means this year no leap month
+| Months | 12 bit | `1` is 30 days and `0` is 29 days
+
 ## Installation
 
 Add this line to your application's Gemfile:
