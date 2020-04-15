@@ -22,5 +22,26 @@ module LunarCalendar
     def leap?
       @leap == true
     end
+
+    # @return [String] The Chinese Era
+    #
+    # @since 0.1.0
+    def chinese_era
+      "#{heavenly}#{earthly}"
+    end
+
+    # @return [String] Heavenly Stems
+    #
+    # @since 0.1.0
+    def heavenly
+      LunarCalendar::HEAVENLY_STEMS[(@year - 4) % 10]
+    end
+
+    # @return [String] Earthly Stems
+    #
+    # @since 0.1.0
+    def earthly
+      LunarCalendar::EARTHLY_STEMS[(@year - 4) % 12]
+    end
   end
 end
